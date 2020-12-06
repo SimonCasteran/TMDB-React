@@ -10,12 +10,14 @@ const Home = () => {
     const [movieOverview, setMovieOverview] = useState("");
     const [bool, setBool] = useState(false);
     
-    const apiKey = "a653d44082e0cd4ed14ab543f3cc7dae";
+    const apiKey = process.env.REACT_APP_APIKEY;
     const tmdb = "https://api.themoviedb.org/3";
     const popularUrl = "/discover/movie?sort_by=popularity.desc";
     const actorUrl = "/search/person?query="
     const titleUrl = "/search/movie?query=";
     const actorMoviesUrl = "/discover/movie?with_cast="
+
+    console.log(process.env)
     
     function toggleMovie(movie){
         setMoviePoster("https://image.tmdb.org/t/p/w300/"+movie.poster_path)
