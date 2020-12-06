@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import json from './movies.json'
 import axios from 'axios';
 import './css/home.css'
 
