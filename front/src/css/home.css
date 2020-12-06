@@ -1,0 +1,36 @@
+.searchBar {
+    border-style: solid;
+    border-color: Black;
+    border-width: 2px;
+    margin-right: 60vw;
+    background-color: lightskyblue;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    
+}
+
+.movieTitle {
+    border-style: solid;
+    border-color: Black;
+    border-width: 2px;
+    margin-right: 60vw;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+.movieDetails {
+    border-style: solid;
+    border-color: Black;
+    border-width: 2px;
+    position: absolute;
+    left: 40vw;
+    top: 0vw;
+    bottom: 0vw;
+    right: 0vw;
+    height: 100 vh;
+}
+
+.moviePoster {
+    max-width:20vw;
+    height: auto;
+}
