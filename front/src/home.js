@@ -4,10 +4,8 @@ import './css/home.css'
 
 const Home = () => {   
     const [moviesList, setMoviesList] = useState([]);
+    const [movieObject, setMovieObject] = useState({});
     const [moviePoster, setMoviePoster] = useState("");
-    const [movieTitle, setMovieTitle] = useState("No movie selected");
-    const [movieNote, setMovieNote] = useState("10");
-    const [movieOverview, setMovieOverview] = useState("");
     const [bool, setBool] = useState(false);
     
     const apiKey = process.env.REACT_APP_APIKEY;
@@ -20,10 +18,8 @@ const Home = () => {
     console.log(process.env)
     
     function toggleMovie(movie){
-        setMoviePoster("https://image.tmdb.org/t/p/w300/"+movie.poster_path)
-        setMovieTitle(movie.title);
-        setMovieNote(movie.vote_average);
-        setMovieOverview(movie.overview);
+        setMovieObject(movie);
+        setMoviePoster("https://image.tmdb.org/t/p/w300/"+movie.poster_path);
     }
     
     function Search(){
@@ -90,12 +86,13 @@ const Home = () => {
                 {moviesList.map(movie =>
                     <div className="moviesList" key={movie.id}>
                     <div className="movieTitle" onClick={() => toggleMovie(movie)}>{movie.title}</div>
-                    {(movie.title === movieTitle) && (
+                    {(movie.title === movieObject.title) && (
                         <div className="movieDetails">
                         <img className="moviePoster" src={moviePoster}></img>
-                        <div>Title: {movieTitle}</div>
-                        <div>{movieNote}/10</div>
-                        <div>{movieOverview}</div>
+                        <div>poster: {movieObject.poster}</div>
+                        <div>Title: {movieObject.title}</div>
+                        <div>{movieObject.vote_average}/10</div>
+                        <div>{movieObject.overview}</div>
                         </div>
                         )}
                         </div>
